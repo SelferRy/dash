@@ -1,2 +1,4 @@
 /dashenv/
 .idea/
+/dash/
+mainpage_test.py

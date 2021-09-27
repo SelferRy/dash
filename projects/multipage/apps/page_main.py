@@ -1,5 +1,6 @@
 import dash_html_components as html
 import dash_core_components as dcc
+# from ..app import app
 
 
 def layout_main_page():
@@ -32,6 +33,8 @@ def layout_main_page():
                 html.Br(),
                 dcc.Link(id='boarder_table', children='table', href='/apps/table',
                          className="table"),
+                html.Br(),
+                html.Img(src="../assets/csm_data-science-ansatz_4b4a12f844.jpg")
                 # dcc.Link(id='oper_monitoring_link', children='Мониторинг PD моделей', href='\model_pd',
                 #          className="basic_link"),
                 # dcc.Link(id='dq-link_main', children='Мониторинг качества данных PD моделей', href='\dataquality',

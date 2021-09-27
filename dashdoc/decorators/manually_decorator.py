@@ -1,5 +1,5 @@
 def decorator_func(func):
-    def wrapped(word="test"):
+    def wrapped(word="projects"):
         print("Before func")
         func(word)
         print("After func")

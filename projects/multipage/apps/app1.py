@@ -2,7 +2,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 
-from proj.app import app
+from projects.multipage.app import app
 
 layout = html.Div([
     html.H3('App 1'),

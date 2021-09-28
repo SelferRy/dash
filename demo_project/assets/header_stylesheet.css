@@ -1,0 +1,263 @@
+body {
+    margin: 0px;
+    font-family: Verdana, sans-serif;
+}
+
+
+h2, h3 {
+	color: #10289C
+}
+
+
+p {
+	font-size: 18px;
+}
+
+.header_block {
+    width: 100%;
+    border-bottom: thin lightgray solid;
+    background-color: #f4f4f4;
+    padding: 10px 0px;
+    float: left;
+    display: block;
+    clear: both;
+}
+
+.banner {
+    height: 60px;
+    padding-bottom: 15px;
+    background-color: #0A2896;
+    align-items: center;
+    font-family: sans-serif;
+    vertical-align: bottom;
+    display: block;
+    clear: both;
+}
+
+.banner H1 {
+    color: ghostwhite;
+    font-size: 30px;
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.channel_filter {
+    display: inline-block;
+}
+
+.dropdown_filter {
+    width: 40%;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-bottom: 5px;
+}
+
+.filter_with_name {
+    display: block;
+    padding-left: 20px;
+}
+
+.filter_with_name h3 {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.filter_block {
+    width: 69%;
+    float: left;
+    display: inline-block;
+}
+
+.filter_block_left {
+    float: left;
+    display: inline-block;
+    width: 60%;
+    font-size: 18px;
+    text-align: left;
+
+}
+
+.filter_block_left h3 {
+    display: inline-block;
+    width: 140px;
+}
+
+.filter_block_right {
+    float: right;
+    display: inline-block;
+    width: 40%;
+    font-size: 18px;
+    text-align: left;
+}
+
+.filter_block_under_label {
+    display: inline-block;
+    width: 23%;
+    padding-left: 2%;
+    float: left;
+}
+
+.filter_block_under_label_oper {
+    display: inline-block;
+    width: 50%;
+    padding-left: 2%;
+    float: left;
+}
+
+.filter_block_under_label h3 {
+    display: inline-block;
+    padding-right: 20px;
+}
+
+.filter_block_one_line
+{
+    float: left;
+    display: inline-block;
+    width: 99%;
+    font-size: 18px;
+    text-align: left;
+}
+
+.tabs_header {
+    font-size: 18px;
+}
+
+
+.buttons_holder {
+    float: right;
+    width: 17%;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+.info_holder {
+    padding: 10px 0px;
+    font-size: 18px;
+    background-color: #f4f4f4;
+    border-bottom: thin lightgray solid;
+    float: left;
+    display: block;
+    clear: both;
+    width: 100%;
+}
+
+.info_block {
+    padding-left: 20px;
+    display: block;
+}
+
+.inline_block_100 {
+    width: 100%;
+    display: inline-block;
+}
+
+.basic_link {
+    color: ghostwhite;
+    text-decoration: none;
+    border: 2px solid midnightblue;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 3px;
+    background-color: #10289C;
+    display: inline-block;
+    float: right;
+    width: 99%;
+}
+
+a.basic_link:hover {
+    background-color: #00B1F3;
+}
+
+.basic_link_inactive {
+    color: ghostwhite;
+    text-decoration: none;
+    border: 2px solid midnightblue;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 3px;
+    background-color: #10289C;
+    display: inline-block;
+    float: right;
+    width: 99%;
+}
+
+a.basic_link_inactive:hover {
+    background-color: #848482;
+}
+
+.submodel_link {
+    color: ghostwhite;
+    text-decoration: none;
+    border: 2px solid midnightblue;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 6px;
+    background-color: #10289C;
+    display: inline-block;
+}
+
+a.submodel_link:hover {
+    background-color: #00B1F3;
+}
+
+.return_link_holder {
+    margin-left: 30px;
+    margin-top: 30px;
+    display: inline-block;
+	float: right;
+    margin-right: 20px;
+}
+
+.return_link {
+    color: ghostwhite;
+    text-decoration: none;
+    border: 2px solid midnightblue;
+    border-radius: 5px;
+    padding: 10px 20px;
+	display: inline-block;
+    background-color: #10289C;
+}
+
+a.return_link:hover {
+    background-color: #00B1F3;
+}
+
+
+a.highlight:hover {
+    background-color: #00B1F3;
+}
+
+#gh-link {
+    font-size: 10pt;
+    text-decoration: none;
+    color: ghostwhite;
+    border: solid 1px #ffffff;
+    border-radius: 20px;
+    font-weight: 100;
+    position: relative;
+    top: 41%;
+    float: right;
+    padding: 5px 15px;
+	margin-right: 20px;
+}
+
+.banner_header {
+    height: 60px;
+    padding-bottom: 15px;
+    align-items: center;
+    font-family: sans-serif;
+    vertical-align: bottom;
+    border-bottom: 2px solid black;
+    display: block;
+    clear: both;
+}
+
+.banner_header H1 {
+    font-size: 35px;
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 20px;
+}

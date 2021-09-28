@@ -1,4 +1,3 @@
-import dash
 import dash_table
 import dash_core_components as dcc
 import dash_html_components as html
@@ -18,10 +17,10 @@ data = OrderedDict(
 df = pd.DataFrame(data)
 
 layout = html.Div(children=[
-    html.H1(children='My own page with Dash'),
-    html.Center(html.H3("This is H3")),
-    html.H5("this H5", style={'text-align': 'right'}),
-    dcc.Link("The link", id="link", style={'color': 'green', 'text-align': 'center'}, href="https://google.com"),
+    html.H1(children='Table demonstration page'),
+    html.Center(html.H3("This table has negative value in column temperature.")),
+    html.H5("We can fill it to some colors.", style={'text-align': 'right'}),
+    dcc.Link("Go to main-page", id="link", style={'color': 'green', 'text-align': 'center'}, href="/"),
     dash_table.DataTable(
         data=df.to_dict('records'),
         columns=[{'id': c, 'name': c} for c in df.columns],

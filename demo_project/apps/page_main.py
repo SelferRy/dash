@@ -35,6 +35,8 @@ def layout_main_page():
                 dcc.Link(id='boarder_table', children='Table', href='/apps/table',
                          className="table"),
                 html.Br(),
+                dcc.Link(id='data_table', children='Data from oracle', href='/apps/data_oracle'),
+                html.Br(),
                 html.Img(src="../assets/csm_data-science-ansatz_4b4a12f844.jpg")
             ], className='buttons_holder_custom')
         ],

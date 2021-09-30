@@ -4,7 +4,7 @@ from dash.dependencies import Input, Output
 
 from app import app
 from apps import page_dropdown, page_submit_button, page_main, boarder_table, table_plot, page_data,\
-    page_data_oracle, page_slider
+    page_mult_inputs  # page_data_oracle, page_slider
 
 
 app.layout = html.Div([
@@ -27,6 +27,9 @@ def display_page(pathname):
         return table_plot.layout
     elif pathname == '/apps/page_data':
         return page_data.layout
+    elif pathname == '/apps/page_multi_inputs':
+        print("Here")
+        return page_mult_inputs.layout
     # elif pathname == '/apps/data_oracle':
     #     return page_data_oracle
     # elif pathname == '/apps/slider':

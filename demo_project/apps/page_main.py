@@ -37,6 +37,8 @@ def layout_main_page():
                 html.Br(),
                 dcc.Link(id='page_data', children='Data', href='/apps/page_data'),
                 html.Br(),
+                dcc.Link(id='page_mult_inputs', children='multiplot', href='/apps/page_multi_inputs'),
+                html.Br(),
                 # dcc.Link(id='data_table', children='Data from oracle', href='/apps/data_oracle'),
                 # html.Br(),
                 # dcc.Link(id='slider-page', children='Slider page', href='/apps/slider'),

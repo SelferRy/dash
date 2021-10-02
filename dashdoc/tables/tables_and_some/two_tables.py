@@ -5,27 +5,20 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash_table import DataTable
 
-from dash.dependencies import Input, Output, State
+from dash.dependencies import Input, Output
 
 import pandas as pd
 import numpy as np
 
 from datetime import date, datetime, timedelta
-import time
 
 
 # ====================== data =====================
-def get_date(day):
-    return date(2021, 9, day)
-
-
 n = 20
-indices = [get_date(day) for day in range(10, 10 + n)]
-rawDf = pd.DataFrame({"A": np.random.rand(n),
-                      "B": np.random.randn(n),
-                      "C": np.ones(n)}, index=indices)
-
-df = rawDf.to_dict("rows")
+indices = [date(2021, 9, day) for day in range(10, 10 + n)]
+df = pd.DataFrame({"A": np.random.rand(n),
+                   "B": np.random.randn(n),
+                   "C": np.ones(n)}, index=indices)
 # ==================================================
 
 app = dash.Dash()
@@ -55,47 +48,28 @@ app.layout = html.Div(children=[
                                          {'group': '.', 'decimal': ','}
                                          }
                               }
-                             for i in rawDf.columns]  #  , data=[]
+                             for i in df.columns]
+                    )
+            ),
+            html.Div(
+                DataTable(
+                    id='datatable-weapons-2',
+                    columns=[{"name": i, "id": i, "type": "numeric",
+                              'format': {'locale':
+                                         {'group': '.', 'decimal': ','}
+                                         }
+                              }
+                             for i in df.columns]
                     )
             )
         ]
     )
 ])
-            # html.Div(
-            #     DataTable(
-            #         id='datatable-weapons-2',
-            #         columns=[{"name": i, "id": i, "type": "numeric", 'format': {'locale': {'group': '.', 'decimal': ','}}}
-            #                  for i in rawDf.columns],
-            #         # data=[]
-            #     ))
-          #])  #,
-    # dcc.Loading(
-    #     id="loading-2",
-    #     children=[
-    #         html.Div(
-    #             DataTable(
-    #                 id='datatable-weapons-2',
-    #                 columns=[{"name": i, "id": i, "type": "numeric", 'format': {'locale': {'group': '.', 'decimal': ','}}}
-    #                          for i in rawDf.columns],
-    #                 # data=[]
-    #             )),
-    #     ]
 
-
-# @app.callback(
-#     [Output('my-date-picker-range', 'start_date'), Output('my-date-picker-range', 'end_date')],
-#     [Input('button-update', 'n_clicks')])
-# def update_output(n_clicks):
-#     if n_clicks is not None and n_clicks > 0:
-#         start_date = date(2021, 9, 10)
-#         end_date = date.today()
-#         return start_date, end_date
-#
-#     return date(2021, 9, 10), date(2021, 9, 17)
 
 @app.callback(
     Output('datatable-weapons', 'data'),
-    # Output('datatable-weapons-2', 'data'),
+    Output('datatable-weapons-2', 'data'),
     Input('my-date-picker-range', 'start_date'),
     Input('my-date-picker-range', 'end_date'))
 def update_graph(begin_dt, end_dt):
@@ -103,12 +77,13 @@ def update_graph(begin_dt, end_dt):
     end_date = datetime.strptime(end_dt, '%Y-%m-%d')
     days = (end_date - begin_date).days
 
-    rawDfSlice = rawDf[0:days]
-    dfSlice = rawDfSlice.to_dict("rows")
+    df_slice = df[0:days]
+    df_slice = df_slice.to_dict("rows")
 
     # time.sleep(5)
 
-    return dfSlice[:3]  #, dfSlice.iloc[3:, :]  # This value needs to be wrapped to be accepted by Dash
+    return df_slice[:3], df_slice[3:]
+
 
 if __name__ == "__main__":
     app.run_server(debug=True)

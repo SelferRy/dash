@@ -48,9 +48,14 @@ app.layout = html.Div(children=[
                                          {'group': '.', 'decimal': ','}
                                          }
                               }
-                             for i in df.columns]
+                             for i in df.columns],
+                    data=[],
+                    sort_action='custom',
+                    sort_mode='single',
+                    sort_by=[]
                     )
             ),
+            html.Br(),
             html.Div(
                 DataTable(
                     id='datatable-weapons-2',
@@ -71,13 +76,21 @@ app.layout = html.Div(children=[
     Output('datatable-weapons', 'data'),
     Output('datatable-weapons-2', 'data'),
     Input('my-date-picker-range', 'start_date'),
-    Input('my-date-picker-range', 'end_date'))
-def update_graph(begin_dt, end_dt):
+    Input('my-date-picker-range', 'end_date'),
+    Input('datatable-weapons', 'sort_by'))
+def update_graph(begin_dt, end_dt, sort_by):
     begin_date = datetime.strptime(begin_dt, '%Y-%m-%d')
     end_date = datetime.strptime(end_dt, '%Y-%m-%d')
     days = (end_date - begin_date).days
 
     df_slice = df[0:days]
+
+    if len(sort_by):
+        df_slice = df_slice.sort_values(
+            sort_by[0]['column_id'],
+            ascending=sort_by[0]['direction'] == 'asc',
+            inplace=False
+        )
     df_slice = df_slice.to_dict("rows")
 
     # time.sleep(5)
